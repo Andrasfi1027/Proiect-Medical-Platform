@@ -46,7 +46,7 @@
             this.DateLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.LoginPacient = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.XButtonPacient = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.LoginMedic = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.XButtonMedic = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -70,11 +70,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.MedicButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QuitButton)).BeginInit();
             this.LoginPacient.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XButtonPacient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.LoginMedic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XButtonMedic)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -98,6 +98,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -108,7 +109,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -122,7 +122,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Medical Platform";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // PacientButton
             // 
@@ -146,7 +145,6 @@
             this.label2.Size = new System.Drawing.Size(230, 32);
             this.label2.TabIndex = 2;
             this.label2.Text = "Bine v-am regasit!!";
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // label3
             // 
@@ -159,7 +157,6 @@
             this.label3.Size = new System.Drawing.Size(505, 32);
             this.label3.TabIndex = 3;
             this.label3.Text = "Va rog sa selectati casuta corespunzatoare:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // MedicButton
             // 
@@ -170,6 +167,7 @@
             this.MedicButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.MedicButton.TabIndex = 4;
             this.MedicButton.TabStop = false;
+            this.MedicButton.Click += new System.EventHandler(this.MedicButton_Click);
             // 
             // label4
             // 
@@ -182,7 +180,6 @@
             this.label4.Size = new System.Drawing.Size(84, 32);
             this.label4.TabIndex = 5;
             this.label4.Text = "Medic";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -205,6 +202,7 @@
             this.QuitButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.QuitButton.TabIndex = 7;
             this.QuitButton.TabStop = false;
+            this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
             // 
             // label6
             // 
@@ -217,7 +215,6 @@
             this.label6.Size = new System.Drawing.Size(76, 32);
             this.label6.TabIndex = 8;
             this.label6.Text = "Iesire";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // TimeLabel
             // 
@@ -237,12 +234,11 @@
             this.DateLabel.BackColor = System.Drawing.Color.Transparent;
             this.DateLabel.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.DateLabel.ForeColor = System.Drawing.Color.Black;
-            this.DateLabel.Location = new System.Drawing.Point(420, 136);
+            this.DateLabel.Location = new System.Drawing.Point(403, 136);
             this.DateLabel.Name = "DateLabel";
             this.DateLabel.Size = new System.Drawing.Size(98, 47);
             this.DateLabel.TabIndex = 10;
             this.DateLabel.Text = "Data";
-            this.DateLabel.Click += new System.EventHandler(this.label8_Click);
             // 
             // timer1
             // 
@@ -253,7 +249,7 @@
             // 
             this.LoginPacient.BackColor = System.Drawing.Color.DimGray;
             this.LoginPacient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.LoginPacient.Controls.Add(this.pictureBox4);
+            this.LoginPacient.Controls.Add(this.XButtonPacient);
             this.LoginPacient.Controls.Add(this.button1);
             this.LoginPacient.Controls.Add(this.label9);
             this.LoginPacient.Controls.Add(this.label8);
@@ -262,22 +258,22 @@
             this.LoginPacient.Controls.Add(this.label7);
             this.LoginPacient.Controls.Add(this.pictureBox3);
             this.LoginPacient.ForeColor = System.Drawing.Color.Black;
-            this.LoginPacient.Location = new System.Drawing.Point(0, 453);
+            this.LoginPacient.Location = new System.Drawing.Point(215, 71);
             this.LoginPacient.Name = "LoginPacient";
             this.LoginPacient.Size = new System.Drawing.Size(280, 360);
             this.LoginPacient.TabIndex = 11;
-            this.LoginPacient.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.LoginPacient.Visible = false;
             // 
-            // pictureBox4
+            // XButtonPacient
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(226, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(54, 27);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.XButtonPacient.Image = ((System.Drawing.Image)(resources.GetObject("XButtonPacient.Image")));
+            this.XButtonPacient.Location = new System.Drawing.Point(226, 3);
+            this.XButtonPacient.Name = "XButtonPacient";
+            this.XButtonPacient.Size = new System.Drawing.Size(54, 27);
+            this.XButtonPacient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.XButtonPacient.TabIndex = 3;
+            this.XButtonPacient.TabStop = false;
+            this.XButtonPacient.Click += new System.EventHandler(this.XButtonPacient_Click);
             // 
             // button1
             // 
@@ -299,7 +295,6 @@
             this.label9.Size = new System.Drawing.Size(69, 25);
             this.label9.TabIndex = 15;
             this.label9.Text = "Parola";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -338,7 +333,6 @@
             this.label7.Size = new System.Drawing.Size(97, 32);
             this.label7.TabIndex = 12;
             this.label7.Text = "Pacient";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // pictureBox3
             // 
@@ -355,7 +349,7 @@
             this.LoginMedic.BackColor = System.Drawing.Color.DimGray;
             this.LoginMedic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.LoginMedic.Controls.Add(this.pictureBox6);
-            this.LoginMedic.Controls.Add(this.pictureBox5);
+            this.LoginMedic.Controls.Add(this.XButtonMedic);
             this.LoginMedic.Controls.Add(this.button2);
             this.LoginMedic.Controls.Add(this.label10);
             this.LoginMedic.Controls.Add(this.label11);
@@ -363,10 +357,11 @@
             this.LoginMedic.Controls.Add(this.textBox4);
             this.LoginMedic.Controls.Add(this.label12);
             this.LoginMedic.ForeColor = System.Drawing.Color.Black;
-            this.LoginMedic.Location = new System.Drawing.Point(434, 450);
+            this.LoginMedic.Location = new System.Drawing.Point(217, 71);
             this.LoginMedic.Name = "LoginMedic";
             this.LoginMedic.Size = new System.Drawing.Size(278, 360);
             this.LoginMedic.TabIndex = 17;
+            this.LoginMedic.Visible = false;
             // 
             // pictureBox6
             // 
@@ -378,15 +373,16 @@
             this.pictureBox6.TabIndex = 12;
             this.pictureBox6.TabStop = false;
             // 
-            // pictureBox5
+            // XButtonMedic
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(226, 3);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(54, 27);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
+            this.XButtonMedic.Image = ((System.Drawing.Image)(resources.GetObject("XButtonMedic.Image")));
+            this.XButtonMedic.Location = new System.Drawing.Point(226, 3);
+            this.XButtonMedic.Name = "XButtonMedic";
+            this.XButtonMedic.Size = new System.Drawing.Size(54, 27);
+            this.XButtonMedic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.XButtonMedic.TabIndex = 3;
+            this.XButtonMedic.TabStop = false;
+            this.XButtonMedic.Click += new System.EventHandler(this.XButtonMedic_Click);
             // 
             // button2
             // 
@@ -480,12 +476,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.QuitButton)).EndInit();
             this.LoginPacient.ResumeLayout(false);
             this.LoginPacient.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XButtonPacient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.LoginMedic.ResumeLayout(false);
             this.LoginMedic.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XButtonMedic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -516,10 +512,10 @@
         private TextBox textBox2;
         private TextBox textBox1;
         private Button button1;
-        private PictureBox pictureBox4;
+        private PictureBox XButtonPacient;
         private Panel LoginMedic;
         private PictureBox pictureBox6;
-        private PictureBox pictureBox5;
+        private PictureBox XButtonMedic;
         private Button button2;
         private Label label10;
         private Label label11;
