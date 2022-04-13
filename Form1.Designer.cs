@@ -46,8 +46,9 @@
             this.DateLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.LoginPacient = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.XButtonPacient = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.LoginButtonPacient = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -55,6 +56,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.LoginMedic = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.XButtonMedic = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -249,8 +251,9 @@
             // 
             this.LoginPacient.BackColor = System.Drawing.Color.DimGray;
             this.LoginPacient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.LoginPacient.Controls.Add(this.button3);
             this.LoginPacient.Controls.Add(this.XButtonPacient);
-            this.LoginPacient.Controls.Add(this.button1);
+            this.LoginPacient.Controls.Add(this.LoginButtonPacient);
             this.LoginPacient.Controls.Add(this.label9);
             this.LoginPacient.Controls.Add(this.label8);
             this.LoginPacient.Controls.Add(this.textBox2);
@@ -258,11 +261,21 @@
             this.LoginPacient.Controls.Add(this.label7);
             this.LoginPacient.Controls.Add(this.pictureBox3);
             this.LoginPacient.ForeColor = System.Drawing.Color.Black;
-            this.LoginPacient.Location = new System.Drawing.Point(215, 71);
+            this.LoginPacient.Location = new System.Drawing.Point(217, 71);
             this.LoginPacient.Name = "LoginPacient";
             this.LoginPacient.Size = new System.Drawing.Size(280, 360);
             this.LoginPacient.TabIndex = 11;
             this.LoginPacient.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button3.Location = new System.Drawing.Point(80, 331);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(119, 24);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "Ati uitat parola?";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // XButtonPacient
             // 
@@ -275,14 +288,15 @@
             this.XButtonPacient.TabStop = false;
             this.XButtonPacient.Click += new System.EventHandler(this.XButtonPacient_Click);
             // 
-            // button1
+            // LoginButtonPacient
             // 
-            this.button1.Location = new System.Drawing.Point(82, 301);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 40);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Authentificare";
-            this.button1.UseVisualStyleBackColor = true;
+            this.LoginButtonPacient.Location = new System.Drawing.Point(82, 290);
+            this.LoginButtonPacient.Name = "LoginButtonPacient";
+            this.LoginButtonPacient.Size = new System.Drawing.Size(115, 40);
+            this.LoginButtonPacient.TabIndex = 16;
+            this.LoginButtonPacient.Text = "Authentificare";
+            this.LoginButtonPacient.UseVisualStyleBackColor = true;
+            this.LoginButtonPacient.Click += new System.EventHandler(this.LoginButtonPacient_Click);
             // 
             // label9
             // 
@@ -348,6 +362,7 @@
             // 
             this.LoginMedic.BackColor = System.Drawing.Color.DimGray;
             this.LoginMedic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.LoginMedic.Controls.Add(this.button4);
             this.LoginMedic.Controls.Add(this.pictureBox6);
             this.LoginMedic.Controls.Add(this.XButtonMedic);
             this.LoginMedic.Controls.Add(this.button2);
@@ -362,6 +377,16 @@
             this.LoginMedic.Size = new System.Drawing.Size(278, 360);
             this.LoginMedic.TabIndex = 17;
             this.LoginMedic.Visible = false;
+            // 
+            // button4
+            // 
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button4.Location = new System.Drawing.Point(80, 330);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(119, 24);
+            this.button4.TabIndex = 18;
+            this.button4.Text = "Ati uitat parola?";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // pictureBox6
             // 
@@ -386,7 +411,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(82, 301);
+            this.button2.Location = new System.Drawing.Point(82, 289);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 40);
             this.button2.TabIndex = 16;
@@ -503,7 +528,6 @@
         private Label TimeLabel;
         private Label DateLabel;
         private System.Windows.Forms.Timer timer1;
-        private PictureBox pictureBox2;
         private Panel LoginPacient;
         private PictureBox pictureBox3;
         private Label label7;
@@ -511,7 +535,7 @@
         private Label label8;
         private TextBox textBox2;
         private TextBox textBox1;
-        private Button button1;
+        private Button LoginButtonPacient;
         private PictureBox XButtonPacient;
         private Panel LoginMedic;
         private PictureBox pictureBox6;
@@ -522,5 +546,8 @@
         private TextBox textBox3;
         private TextBox textBox4;
         private Label label12;
+        private Button button3;
+        private Button button4;
+        private PictureBox pictureBox2;
     }
 }
