@@ -81,22 +81,22 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(18)))), ((int)(((byte)(157)))));
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(712, 65);
+            this.panel1.Size = new System.Drawing.Size(712, 69);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(641, 18);
+            this.pictureBox2.Location = new System.Drawing.Point(641, 19);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(57, 35);
+            this.pictureBox2.Size = new System.Drawing.Size(57, 37);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -105,9 +105,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(66, 41);
+            this.pictureBox1.Size = new System.Drawing.Size(66, 44);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -118,19 +118,18 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(84, 22);
+            this.label1.Location = new System.Drawing.Point(84, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 25);
+            this.label1.Size = new System.Drawing.Size(170, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Medical Platform";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // PacientButton
             // 
             this.PacientButton.Image = ((System.Drawing.Image)(resources.GetObject("PacientButton.Image")));
-            this.PacientButton.Location = new System.Drawing.Point(286, 310);
+            this.PacientButton.Location = new System.Drawing.Point(286, 331);
             this.PacientButton.Name = "PacientButton";
-            this.PacientButton.Size = new System.Drawing.Size(138, 102);
+            this.PacientButton.Size = new System.Drawing.Size(138, 109);
             this.PacientButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PacientButton.TabIndex = 2;
             this.PacientButton.TabStop = false;
@@ -141,10 +140,11 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(52, 106);
+            this.label2.ForeColor = System.Drawing.Color.Navy;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label2.Location = new System.Drawing.Point(52, 113);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(230, 32);
+            this.label2.Size = new System.Drawing.Size(235, 31);
             this.label2.TabIndex = 2;
             this.label2.Text = "Bine v-am regasit!!";
             // 
@@ -153,19 +153,20 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(104, 254);
+            this.label3.ForeColor = System.Drawing.Color.Navy;
+            this.label3.Location = new System.Drawing.Point(104, 271);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(505, 32);
+            this.label3.Size = new System.Drawing.Size(519, 31);
             this.label3.TabIndex = 3;
             this.label3.Text = "Va rog sa selectati casuta corespunzatoare:";
             // 
             // MedicButton
             // 
+            this.MedicButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.MedicButton.Image = ((System.Drawing.Image)(resources.GetObject("MedicButton.Image")));
-            this.MedicButton.Location = new System.Drawing.Point(70, 310);
+            this.MedicButton.Location = new System.Drawing.Point(70, 331);
             this.MedicButton.Name = "MedicButton";
-            this.MedicButton.Size = new System.Drawing.Size(138, 102);
+            this.MedicButton.Size = new System.Drawing.Size(138, 109);
             this.MedicButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.MedicButton.TabIndex = 4;
             this.MedicButton.TabStop = false;
@@ -176,10 +177,10 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(98, 415);
+            this.label4.ForeColor = System.Drawing.Color.Navy;
+            this.label4.Location = new System.Drawing.Point(98, 443);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 32);
+            this.label4.Size = new System.Drawing.Size(84, 31);
             this.label4.TabIndex = 5;
             this.label4.Text = "Medic";
             // 
@@ -188,19 +189,20 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(304, 415);
+            this.label5.ForeColor = System.Drawing.Color.Navy;
+            this.label5.Location = new System.Drawing.Point(304, 443);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 32);
+            this.label5.Size = new System.Drawing.Size(102, 31);
             this.label5.TabIndex = 6;
             this.label5.Text = "Pacient";
             // 
             // QuitButton
             // 
+            this.QuitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.QuitButton.Image = ((System.Drawing.Image)(resources.GetObject("QuitButton.Image")));
-            this.QuitButton.Location = new System.Drawing.Point(500, 310);
+            this.QuitButton.Location = new System.Drawing.Point(500, 331);
             this.QuitButton.Name = "QuitButton";
-            this.QuitButton.Size = new System.Drawing.Size(138, 102);
+            this.QuitButton.Size = new System.Drawing.Size(138, 109);
             this.QuitButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.QuitButton.TabIndex = 7;
             this.QuitButton.TabStop = false;
@@ -211,10 +213,10 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(533, 415);
+            this.label6.ForeColor = System.Drawing.Color.Navy;
+            this.label6.Location = new System.Drawing.Point(533, 443);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 32);
+            this.label6.Size = new System.Drawing.Size(81, 31);
             this.label6.TabIndex = 8;
             this.label6.Text = "Iesire";
             // 
@@ -223,10 +225,11 @@
             this.TimeLabel.AutoSize = true;
             this.TimeLabel.BackColor = System.Drawing.Color.Transparent;
             this.TimeLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TimeLabel.ForeColor = System.Drawing.Color.Black;
-            this.TimeLabel.Location = new System.Drawing.Point(568, 106);
+            this.TimeLabel.ForeColor = System.Drawing.Color.Navy;
+            this.TimeLabel.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.TimeLabel.Location = new System.Drawing.Point(568, 113);
             this.TimeLabel.Name = "TimeLabel";
-            this.TimeLabel.Size = new System.Drawing.Size(70, 32);
+            this.TimeLabel.Size = new System.Drawing.Size(72, 31);
             this.TimeLabel.TabIndex = 9;
             this.TimeLabel.Text = "Time";
             // 
@@ -235,10 +238,10 @@
             this.DateLabel.AutoSize = true;
             this.DateLabel.BackColor = System.Drawing.Color.Transparent;
             this.DateLabel.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DateLabel.ForeColor = System.Drawing.Color.Black;
-            this.DateLabel.Location = new System.Drawing.Point(403, 136);
+            this.DateLabel.ForeColor = System.Drawing.Color.Navy;
+            this.DateLabel.Location = new System.Drawing.Point(403, 145);
             this.DateLabel.Name = "DateLabel";
-            this.DateLabel.Size = new System.Drawing.Size(98, 47);
+            this.DateLabel.Size = new System.Drawing.Size(97, 43);
             this.DateLabel.TabIndex = 10;
             this.DateLabel.Text = "Data";
             // 
@@ -249,7 +252,7 @@
             // 
             // LoginPacient
             // 
-            this.LoginPacient.BackColor = System.Drawing.Color.DimGray;
+            this.LoginPacient.BackColor = System.Drawing.Color.LightSlateGray;
             this.LoginPacient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.LoginPacient.Controls.Add(this.button3);
             this.LoginPacient.Controls.Add(this.XButtonPacient);
@@ -261,18 +264,18 @@
             this.LoginPacient.Controls.Add(this.label7);
             this.LoginPacient.Controls.Add(this.pictureBox3);
             this.LoginPacient.ForeColor = System.Drawing.Color.Black;
-            this.LoginPacient.Location = new System.Drawing.Point(217, 71);
+            this.LoginPacient.Location = new System.Drawing.Point(212, 89);
             this.LoginPacient.Name = "LoginPacient";
-            this.LoginPacient.Size = new System.Drawing.Size(280, 360);
+            this.LoginPacient.Size = new System.Drawing.Size(280, 384);
             this.LoginPacient.TabIndex = 11;
             this.LoginPacient.Visible = false;
             // 
             // button3
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button3.Location = new System.Drawing.Point(80, 331);
+            this.button3.Location = new System.Drawing.Point(80, 353);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(119, 24);
+            this.button3.Size = new System.Drawing.Size(119, 26);
             this.button3.TabIndex = 17;
             this.button3.Text = "Ati uitat parola?";
             this.button3.UseVisualStyleBackColor = true;
@@ -282,7 +285,7 @@
             this.XButtonPacient.Image = ((System.Drawing.Image)(resources.GetObject("XButtonPacient.Image")));
             this.XButtonPacient.Location = new System.Drawing.Point(226, 3);
             this.XButtonPacient.Name = "XButtonPacient";
-            this.XButtonPacient.Size = new System.Drawing.Size(54, 27);
+            this.XButtonPacient.Size = new System.Drawing.Size(54, 29);
             this.XButtonPacient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.XButtonPacient.TabIndex = 3;
             this.XButtonPacient.TabStop = false;
@@ -290,9 +293,9 @@
             // 
             // LoginButtonPacient
             // 
-            this.LoginButtonPacient.Location = new System.Drawing.Point(82, 290);
+            this.LoginButtonPacient.Location = new System.Drawing.Point(82, 309);
             this.LoginButtonPacient.Name = "LoginButtonPacient";
-            this.LoginButtonPacient.Size = new System.Drawing.Size(115, 40);
+            this.LoginButtonPacient.Size = new System.Drawing.Size(115, 43);
             this.LoginButtonPacient.TabIndex = 16;
             this.LoginButtonPacient.Text = "Authentificare";
             this.LoginButtonPacient.UseVisualStyleBackColor = true;
@@ -304,9 +307,9 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(107, 232);
+            this.label9.Location = new System.Drawing.Point(107, 247);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 25);
+            this.label9.Size = new System.Drawing.Size(72, 25);
             this.label9.TabIndex = 15;
             this.label9.Text = "Parola";
             // 
@@ -316,22 +319,22 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(58, 174);
+            this.label8.Location = new System.Drawing.Point(58, 186);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(178, 25);
+            this.label8.Size = new System.Drawing.Size(181, 25);
             this.label8.TabIndex = 12;
             this.label8.Text = "Nume de utilizator";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(31, 260);
+            this.textBox2.Location = new System.Drawing.Point(31, 277);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(220, 23);
             this.textBox2.TabIndex = 14;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(31, 202);
+            this.textBox1.Location = new System.Drawing.Point(31, 215);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(220, 23);
             this.textBox1.TabIndex = 13;
@@ -342,25 +345,25 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(95, 118);
+            this.label7.Location = new System.Drawing.Point(95, 126);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 32);
+            this.label7.Size = new System.Drawing.Size(102, 31);
             this.label7.TabIndex = 12;
             this.label7.Text = "Pacient";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(84, 19);
+            this.pictureBox3.Location = new System.Drawing.Point(84, 20);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(115, 96);
+            this.pictureBox3.Size = new System.Drawing.Size(115, 102);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 12;
             this.pictureBox3.TabStop = false;
             // 
             // LoginMedic
             // 
-            this.LoginMedic.BackColor = System.Drawing.Color.DimGray;
+            this.LoginMedic.BackColor = System.Drawing.Color.LightSlateGray;
             this.LoginMedic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.LoginMedic.Controls.Add(this.button4);
             this.LoginMedic.Controls.Add(this.pictureBox6);
@@ -372,18 +375,18 @@
             this.LoginMedic.Controls.Add(this.textBox4);
             this.LoginMedic.Controls.Add(this.label12);
             this.LoginMedic.ForeColor = System.Drawing.Color.Black;
-            this.LoginMedic.Location = new System.Drawing.Point(217, 71);
+            this.LoginMedic.Location = new System.Drawing.Point(214, 90);
             this.LoginMedic.Name = "LoginMedic";
-            this.LoginMedic.Size = new System.Drawing.Size(278, 360);
+            this.LoginMedic.Size = new System.Drawing.Size(278, 384);
             this.LoginMedic.TabIndex = 17;
             this.LoginMedic.Visible = false;
             // 
             // button4
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button4.Location = new System.Drawing.Point(80, 330);
+            this.button4.Location = new System.Drawing.Point(80, 352);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(119, 24);
+            this.button4.Size = new System.Drawing.Size(119, 26);
             this.button4.TabIndex = 18;
             this.button4.Text = "Ati uitat parola?";
             this.button4.UseVisualStyleBackColor = true;
@@ -391,9 +394,9 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(72, 13);
+            this.pictureBox6.Location = new System.Drawing.Point(72, 14);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(138, 102);
+            this.pictureBox6.Size = new System.Drawing.Size(138, 109);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 12;
             this.pictureBox6.TabStop = false;
@@ -403,7 +406,7 @@
             this.XButtonMedic.Image = ((System.Drawing.Image)(resources.GetObject("XButtonMedic.Image")));
             this.XButtonMedic.Location = new System.Drawing.Point(226, 3);
             this.XButtonMedic.Name = "XButtonMedic";
-            this.XButtonMedic.Size = new System.Drawing.Size(54, 27);
+            this.XButtonMedic.Size = new System.Drawing.Size(54, 29);
             this.XButtonMedic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.XButtonMedic.TabIndex = 3;
             this.XButtonMedic.TabStop = false;
@@ -411,9 +414,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(82, 289);
+            this.button2.Location = new System.Drawing.Point(82, 308);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 40);
+            this.button2.Size = new System.Drawing.Size(115, 43);
             this.button2.TabIndex = 16;
             this.button2.Text = "Authentificare";
             this.button2.UseVisualStyleBackColor = true;
@@ -424,9 +427,9 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(107, 232);
+            this.label10.Location = new System.Drawing.Point(107, 247);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 25);
+            this.label10.Size = new System.Drawing.Size(72, 25);
             this.label10.TabIndex = 15;
             this.label10.Text = "Parola";
             // 
@@ -436,22 +439,22 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(58, 174);
+            this.label11.Location = new System.Drawing.Point(58, 186);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(178, 25);
+            this.label11.Size = new System.Drawing.Size(181, 25);
             this.label11.TabIndex = 12;
             this.label11.Text = "Nume de utilizator";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(31, 260);
+            this.textBox3.Location = new System.Drawing.Point(31, 277);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(220, 23);
             this.textBox3.TabIndex = 14;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(31, 202);
+            this.textBox4.Location = new System.Drawing.Point(31, 215);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(220, 23);
             this.textBox4.TabIndex = 13;
@@ -462,18 +465,18 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(99, 118);
+            this.label12.Location = new System.Drawing.Point(99, 126);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(84, 32);
+            this.label12.Size = new System.Drawing.Size(84, 31);
             this.label12.TabIndex = 12;
             this.label12.Text = "Medic";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(712, 470);
+            this.BackColor = System.Drawing.Color.Thistle;
+            this.ClientSize = new System.Drawing.Size(712, 501);
             this.Controls.Add(this.LoginPacient);
             this.Controls.Add(this.LoginMedic);
             this.Controls.Add(this.DateLabel);
@@ -487,10 +490,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.PacientButton);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.TransparencyKey = System.Drawing.Color.Black;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
