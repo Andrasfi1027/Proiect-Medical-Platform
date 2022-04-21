@@ -81,7 +81,9 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(18)))), ((int)(((byte)(157)))));
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
@@ -94,7 +96,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(641, 19);
+            this.pictureBox2.Location = new System.Drawing.Point(648, 15);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(57, 37);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -105,7 +107,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(66, 44);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -118,7 +120,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(84, 23);
+            this.label1.Location = new System.Drawing.Point(71, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 25);
             this.label1.TabIndex = 0;
@@ -126,6 +128,9 @@
             // 
             // PacientButton
             // 
+            this.PacientButton.BackColor = System.Drawing.Color.Transparent;
+            this.PacientButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PacientButton.BackgroundImage")));
+            this.PacientButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PacientButton.Image = ((System.Drawing.Image)(resources.GetObject("PacientButton.Image")));
             this.PacientButton.Location = new System.Drawing.Point(286, 331);
             this.PacientButton.Name = "PacientButton";
@@ -163,6 +168,9 @@
             // MedicButton
             // 
             this.MedicButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.MedicButton.BackColor = System.Drawing.Color.Transparent;
+            this.MedicButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MedicButton.BackgroundImage")));
+            this.MedicButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MedicButton.Image = ((System.Drawing.Image)(resources.GetObject("MedicButton.Image")));
             this.MedicButton.Location = new System.Drawing.Point(70, 331);
             this.MedicButton.Name = "MedicButton";
@@ -199,6 +207,9 @@
             // QuitButton
             // 
             this.QuitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.QuitButton.BackColor = System.Drawing.Color.Transparent;
+            this.QuitButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("QuitButton.BackgroundImage")));
+            this.QuitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.QuitButton.Image = ((System.Drawing.Image)(resources.GetObject("QuitButton.Image")));
             this.QuitButton.Location = new System.Drawing.Point(500, 331);
             this.QuitButton.Name = "QuitButton";
@@ -252,7 +263,7 @@
             // 
             // LoginPacient
             // 
-            this.LoginPacient.BackColor = System.Drawing.Color.LightSlateGray;
+            this.LoginPacient.BackColor = System.Drawing.Color.Gray;
             this.LoginPacient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.LoginPacient.Controls.Add(this.button3);
             this.LoginPacient.Controls.Add(this.XButtonPacient);
@@ -264,7 +275,7 @@
             this.LoginPacient.Controls.Add(this.label7);
             this.LoginPacient.Controls.Add(this.pictureBox3);
             this.LoginPacient.ForeColor = System.Drawing.Color.Black;
-            this.LoginPacient.Location = new System.Drawing.Point(212, 89);
+            this.LoginPacient.Location = new System.Drawing.Point(215, 90);
             this.LoginPacient.Name = "LoginPacient";
             this.LoginPacient.Size = new System.Drawing.Size(280, 384);
             this.LoginPacient.TabIndex = 11;
@@ -375,7 +386,7 @@
             this.LoginMedic.Controls.Add(this.textBox4);
             this.LoginMedic.Controls.Add(this.label12);
             this.LoginMedic.ForeColor = System.Drawing.Color.Black;
-            this.LoginMedic.Location = new System.Drawing.Point(214, 90);
+            this.LoginMedic.Location = new System.Drawing.Point(215, 90);
             this.LoginMedic.Name = "LoginMedic";
             this.LoginMedic.Size = new System.Drawing.Size(278, 384);
             this.LoginMedic.TabIndex = 17;
@@ -475,7 +486,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Thistle;
+            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(712, 501);
             this.Controls.Add(this.LoginPacient);
             this.Controls.Add(this.LoginMedic);
