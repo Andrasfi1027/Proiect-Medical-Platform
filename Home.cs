@@ -20,7 +20,7 @@ namespace WinFormsApp1
         private void XPacientInterface_Click(object sender, EventArgs e)
         {
             this.Close();
-            Form1 login = new Form1();
+            Login login = new Login();
             login.Show();
         }
 
@@ -35,6 +35,13 @@ namespace WinFormsApp1
         {
             TimeLabel.Text = DateTime.Now.ToLongTimeString();
             timer1.Start();
+        }
+
+        private void SpecialistButton_Click(object sender, EventArgs e)
+        {
+            ServiceSelection service = new ServiceSelection();
+            this.Hide();
+            service.ShowDialog();
         }
     }
 }

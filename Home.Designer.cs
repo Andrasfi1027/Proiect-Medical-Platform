@@ -38,7 +38,7 @@
             this.XPacientInterface = new System.Windows.Forms.PictureBox();
             this.MedicSpecialistPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.SpecialistButton = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -49,7 +49,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPacientInterface)).BeginInit();
             this.MedicSpecialistPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SpecialistButton)).BeginInit();
             this.SuspendLayout();
             // 
             // BineAtiVenit
@@ -89,7 +89,9 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.HomeIcon);
             this.panel1.Controls.Add(this.XPacientInterface);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -100,7 +102,7 @@
             // HomeIcon
             // 
             this.HomeIcon.Image = ((System.Drawing.Image)(resources.GetObject("HomeIcon.Image")));
-            this.HomeIcon.Location = new System.Drawing.Point(12, 12);
+            this.HomeIcon.Location = new System.Drawing.Point(38, 9);
             this.HomeIcon.Name = "HomeIcon";
             this.HomeIcon.Size = new System.Drawing.Size(66, 44);
             this.HomeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -124,7 +126,7 @@
             this.MedicSpecialistPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MedicSpecialistPanel.BackgroundImage")));
             this.MedicSpecialistPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MedicSpecialistPanel.Controls.Add(this.label1);
-            this.MedicSpecialistPanel.Controls.Add(this.pictureBox2);
+            this.MedicSpecialistPanel.Controls.Add(this.SpecialistButton);
             this.MedicSpecialistPanel.Location = new System.Drawing.Point(143, 202);
             this.MedicSpecialistPanel.Name = "MedicSpecialistPanel";
             this.MedicSpecialistPanel.Size = new System.Drawing.Size(298, 158);
@@ -142,16 +144,17 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Medici Specialisti";
             // 
-            // pictureBox2
+            // SpecialistButton
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(98, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(106, 112);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.SpecialistButton.BackColor = System.Drawing.Color.Transparent;
+            this.SpecialistButton.Image = ((System.Drawing.Image)(resources.GetObject("SpecialistButton.Image")));
+            this.SpecialistButton.Location = new System.Drawing.Point(98, 3);
+            this.SpecialistButton.Name = "SpecialistButton";
+            this.SpecialistButton.Size = new System.Drawing.Size(106, 112);
+            this.SpecialistButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SpecialistButton.TabIndex = 0;
+            this.SpecialistButton.TabStop = false;
+            this.SpecialistButton.Click += new System.EventHandler(this.SpecialistButton_Click);
             // 
             // panel3
             // 
@@ -240,7 +243,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.XPacientInterface)).EndInit();
             this.MedicSpecialistPanel.ResumeLayout(false);
             this.MedicSpecialistPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SpecialistButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,6 +265,6 @@
         private System.Windows.Forms.Timer timer1;
         private PictureBox HomeIcon;
         private Label label1;
-        private PictureBox pictureBox2;
+        private PictureBox SpecialistButton;
     }
 }

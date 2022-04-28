@@ -2,12 +2,13 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UseWPF>True</UseWPF>
+    <UseWPF>False</UseWPF>
     <LangVersion>latest</LangVersion>
+    <StartupObject>WinFormsApp1.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
