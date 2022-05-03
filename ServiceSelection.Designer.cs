@@ -135,7 +135,7 @@
             this.BlueHeader.Controls.Add(this.XPacientInterface);
             this.BlueHeader.Location = new System.Drawing.Point(0, -1);
             this.BlueHeader.Name = "BlueHeader";
-            this.BlueHeader.Size = new System.Drawing.Size(1382, 63);
+            this.BlueHeader.Size = new System.Drawing.Size(1388, 63);
             this.BlueHeader.TabIndex = 13;
             // 
             // HomeIcon
@@ -161,7 +161,6 @@
             // 
             // Text
             // 
-            this.Text.AutoSize = true;
             this.Text.BackColor = System.Drawing.Color.Transparent;
             this.Text.Font = new System.Drawing.Font("Segoe UI Black", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Text.ForeColor = System.Drawing.Color.Navy;
@@ -198,7 +197,6 @@
             // 
             // BackButton
             // 
-            this.BackButton.AutoSize = true;
             this.BackButton.BackColor = System.Drawing.Color.Transparent;
             this.BackButton.Font = new System.Drawing.Font("Segoe UI Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BackButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -756,7 +754,6 @@
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Segoe UI Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -792,7 +789,6 @@
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Segoe UI Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -805,8 +801,8 @@
             // 
             // ServiceSelection
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1381, 614);
@@ -824,7 +820,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPacientInterface)).EndInit();
             this.BackButtonPaint.ResumeLayout(false);
-            this.BackButtonPaint.PerformLayout();
             this.PanelNext.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.UpperButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DownButton2)).EndInit();
@@ -869,13 +864,10 @@
             this.PanelNext2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.UpperButton2)).EndInit();
             this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

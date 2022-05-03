@@ -54,7 +54,6 @@
             // 
             // BineAtiVenit
             // 
-            this.BineAtiVenit.AutoSize = true;
             this.BineAtiVenit.BackColor = System.Drawing.Color.Transparent;
             this.BineAtiVenit.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BineAtiVenit.Location = new System.Drawing.Point(145, 124);
@@ -134,7 +133,6 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -217,8 +215,7 @@
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -242,7 +239,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPacientInterface)).EndInit();
             this.MedicSpecialistPanel.ResumeLayout(false);
-            this.MedicSpecialistPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SpecialistButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

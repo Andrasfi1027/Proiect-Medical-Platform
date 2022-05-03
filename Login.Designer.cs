@@ -116,7 +116,6 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -142,7 +141,6 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Navy;
@@ -155,7 +153,6 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Navy;
@@ -233,7 +230,6 @@
             // 
             // TimeLabel
             // 
-            this.TimeLabel.AutoSize = true;
             this.TimeLabel.BackColor = System.Drawing.Color.Transparent;
             this.TimeLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TimeLabel.ForeColor = System.Drawing.Color.Navy;
@@ -263,7 +259,7 @@
             // 
             // LoginPacient
             // 
-            this.LoginPacient.BackColor = System.Drawing.Color.Gray;
+            this.LoginPacient.BackColor = System.Drawing.Color.RoyalBlue;
             this.LoginPacient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.LoginPacient.Controls.Add(this.button3);
             this.LoginPacient.Controls.Add(this.XButtonPacient);
@@ -304,6 +300,7 @@
             // 
             // LoginButtonPacient
             // 
+            this.LoginButtonPacient.AutoSize = true;
             this.LoginButtonPacient.Location = new System.Drawing.Point(82, 309);
             this.LoginButtonPacient.Name = "LoginButtonPacient";
             this.LoginButtonPacient.Size = new System.Drawing.Size(115, 43);
@@ -482,10 +479,10 @@
             this.label12.TabIndex = 12;
             this.label12.Text = "Medic";
             // 
-            // Form1
+            // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -505,13 +502,12 @@
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.TransparencyKey = System.Drawing.Color.Black;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PacientButton)).EndInit();
