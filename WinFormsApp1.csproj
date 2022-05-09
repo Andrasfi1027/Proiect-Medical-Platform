@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UseWPF>False</UseWPF>
+    <UseWPF>True</UseWPF>
     <LangVersion>latest</LangVersion>
     <StartupObject>WinFormsApp1.Program</StartupObject>
   </PropertyGroup>

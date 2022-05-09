@@ -1,6 +1,6 @@
 namespace WinFormsApp1
 {
-    public partial class Login : Form
+    public partial class Login : Form, IDisposable
     {
         public Login()
         {

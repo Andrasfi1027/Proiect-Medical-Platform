@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using Microsoft.Win32.SafeHandles;
 
 namespace WinFormsApp1
 {
-    public partial class Home : Form
+        public partial class Home : Form, IDisposable
     {
         public Home()
         {
@@ -52,6 +54,21 @@ namespace WinFormsApp1
             ServiceSelection service = new ServiceSelection();
             this.Hide();
             service.ShowDialog();
+        }
+
+        private void QuitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Info_Click(object sender, EventArgs e)
+        {
+           Information .Show();
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            Information.Hide();
         }
     }
 }

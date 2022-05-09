@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
-    public partial class ServiceSelection : Form
+    public partial class ServiceSelection : Form, IDisposable
     {
         public ServiceSelection()
         {
             InitializeComponent();
         }
+
         protected override CreateParams CreateParams
         {
             get
