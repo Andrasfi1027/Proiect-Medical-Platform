@@ -70,5 +70,15 @@ namespace WinFormsApp1
         {
             Information.Hide();
         }
+
+        private void Greutea_Click(object sender, EventArgs e)
+        {
+            WeightPanel.Show();
+        }
+
+        private void BackButtonWeight_Click(object sender, EventArgs e)
+        {
+            WeightPanel.Hide();
+        }
     }
 }
