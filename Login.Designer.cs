@@ -234,9 +234,9 @@
             this.TimeLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TimeLabel.ForeColor = System.Drawing.Color.Navy;
             this.TimeLabel.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.TimeLabel.Location = new System.Drawing.Point(568, 113);
+            this.TimeLabel.Location = new System.Drawing.Point(544, 113);
             this.TimeLabel.Name = "TimeLabel";
-            this.TimeLabel.Size = new System.Drawing.Size(72, 31);
+            this.TimeLabel.Size = new System.Drawing.Size(100, 31);
             this.TimeLabel.TabIndex = 9;
             this.TimeLabel.Text = "Time";
             // 
@@ -259,8 +259,9 @@
             // 
             // LoginPacient
             // 
-            this.LoginPacient.BackColor = System.Drawing.Color.RoyalBlue;
-            this.LoginPacient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.LoginPacient.BackColor = System.Drawing.Color.Transparent;
+            this.LoginPacient.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LoginPacient.BackgroundImage")));
+            this.LoginPacient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.LoginPacient.Controls.Add(this.button3);
             this.LoginPacient.Controls.Add(this.XButtonPacient);
             this.LoginPacient.Controls.Add(this.LoginButtonPacient);
@@ -290,7 +291,7 @@
             // XButtonPacient
             // 
             this.XButtonPacient.Image = ((System.Drawing.Image)(resources.GetObject("XButtonPacient.Image")));
-            this.XButtonPacient.Location = new System.Drawing.Point(226, 3);
+            this.XButtonPacient.Location = new System.Drawing.Point(205, 8);
             this.XButtonPacient.Name = "XButtonPacient";
             this.XButtonPacient.Size = new System.Drawing.Size(54, 29);
             this.XButtonPacient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

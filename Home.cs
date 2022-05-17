@@ -80,5 +80,95 @@ namespace WinFormsApp1
         {
             WeightPanel.Hide();
         }
+
+        private void DownButtonW_Click(object sender, EventArgs e)
+        {
+            GF1.Hide();
+            Inaltime.Hide();
+            GB1.Hide();
+            GF2.Show();
+            Inaltime2.Show();
+            GB2.Show();
+            UpButtonW.Show();
+            DownButtonW.Hide();
+            DownButtonW2.Show();
+        }
+
+        private void UpButtonW_Click(object sender, EventArgs e)
+        {
+            UpButtonW.Hide();
+            DownButtonW2.Hide();
+            DownButtonW.Show();
+            GF2.Hide();
+            Inaltime2.Hide();
+            GB2.Hide();
+            GF1.Show();
+            Inaltime.Show();
+            GB1.Show();
+        }
+
+        private void DownButtonW2_Click(object sender, EventArgs e)
+        {
+            DownButtonW2.Hide();
+            UpButtonW2.Show();
+            GF2.Hide();
+            Inaltime2.Hide();
+            GB2.Hide();
+            GF3.Show();
+            Inaltime3.Show();
+            GB3.Show();
+        }
+
+        private void UpButtonW2_Click(object sender, EventArgs e)
+        {
+            UpButtonW2.Hide();
+            GF3.Hide();
+            Inaltime3.Hide();
+            GB3.Hide();
+            GF2.Show();
+            Inaltime2.Show();
+            GB2.Show();
+            DownButtonW2.Show();
+        }
+
+        private void Tensiunea_Click(object sender, EventArgs e)
+        {
+            TensionPanel.Show();
+        }
+
+        private void BackButtonTension_Click(object sender, EventArgs e)
+        {
+            TensionPanel.Hide();
+        }
+
+        private void Glicemie_Click(object sender, EventArgs e)
+        {
+            GlicemiePanel.Show();
+        }
+
+        private void BackButtonG_Click(object sender, EventArgs e)
+        {
+            GlicemiePanel.Hide();
+        }
+
+        private void TempButton_Click(object sender, EventArgs e)
+        {
+            TemperaturePanel.Show();
+        }
+
+        private void BackButtonTemp_Click(object sender, EventArgs e)
+        {
+            TemperaturePanel.Hide();
+        }
+
+        private void SaturatieButton_Click(object sender, EventArgs e)
+        {
+            SaturationPanel.Show();
+        }
+
+        private void BackButtonSA_Click(object sender, EventArgs e)
+        {
+            SaturationPanel.Hide();
+        }
     }
 }
