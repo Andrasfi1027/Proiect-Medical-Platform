@@ -46,7 +46,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.MapButton = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.QuitButton = new System.Windows.Forms.PictureBox();
@@ -219,7 +219,7 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Info)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MapButton)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QuitButton)).BeginInit();
             this.Information.SuspendLayout();
@@ -438,7 +438,7 @@
             this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel6.Controls.Add(this.label5);
-            this.panel6.Controls.Add(this.pictureBox1);
+            this.panel6.Controls.Add(this.MapButton);
             this.panel6.Location = new System.Drawing.Point(903, 202);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(298, 158);
@@ -449,22 +449,23 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(34, 116);
+            this.label5.Location = new System.Drawing.Point(1, 118);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(232, 40);
+            this.label5.Size = new System.Drawing.Size(314, 40);
             this.label5.TabIndex = 21;
-            this.label5.Text = "Harta Cabinete";
+            this.label5.Text = "Harta Cazuri Covrid";
             // 
-            // pictureBox1
+            // MapButton
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(83, -6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 126);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
+            this.MapButton.BackColor = System.Drawing.Color.Transparent;
+            this.MapButton.Image = ((System.Drawing.Image)(resources.GetObject("MapButton.Image")));
+            this.MapButton.Location = new System.Drawing.Point(83, -6);
+            this.MapButton.Name = "MapButton";
+            this.MapButton.Size = new System.Drawing.Size(133, 126);
+            this.MapButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.MapButton.TabIndex = 20;
+            this.MapButton.TabStop = false;
+            this.MapButton.Click += new System.EventHandler(this.MapButton_Click);
             // 
             // panel7
             // 
@@ -526,7 +527,7 @@
             this.Information.Controls.Add(this.panel9);
             this.Information.Controls.Add(this.panel8);
             this.Information.Controls.Add(this.panel2);
-            this.Information.Location = new System.Drawing.Point(12, 91);
+            this.Information.Location = new System.Drawing.Point(12, 100);
             this.Information.Name = "Information";
             this.Information.Size = new System.Drawing.Size(1373, 519);
             this.Information.TabIndex = 18;
@@ -539,7 +540,7 @@
             this.SaturationPanel.Controls.Add(this.label75);
             this.SaturationPanel.Controls.Add(this.panel33);
             this.SaturationPanel.Controls.Add(this.panel36);
-            this.SaturationPanel.Location = new System.Drawing.Point(0, 5);
+            this.SaturationPanel.Location = new System.Drawing.Point(-4, 5);
             this.SaturationPanel.Name = "SaturationPanel";
             this.SaturationPanel.Size = new System.Drawing.Size(1386, 427);
             this.SaturationPanel.TabIndex = 46;
@@ -2395,7 +2396,7 @@
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Info)).EndInit();
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MapButton)).EndInit();
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.QuitButton)).EndInit();
             this.Information.ResumeLayout(false);
@@ -2490,7 +2491,7 @@
         private Label BackButton;
         private Label label4;
         private Label label5;
-        private PictureBox pictureBox1;
+        private PictureBox MapButton;
         private Panel WeightPanel;
         private Panel panel15;
         private Panel panel1;

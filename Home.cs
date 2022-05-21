@@ -170,5 +170,12 @@ namespace WinFormsApp1
         {
             SaturationPanel.Hide();
         }
+
+        private void MapButton_Click(object sender, EventArgs e)
+        {
+            Harta harta = new Harta();
+            this.Hide();
+            harta.ShowDialog();
+        }
     }
 }
