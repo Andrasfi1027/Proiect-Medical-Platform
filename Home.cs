@@ -9,6 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Microsoft.Win32.SafeHandles;
+using GMap.NET.MapProviders;
+using GMap.NET;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
+using GMap.NET.WindowsForms.ToolTips;
 
 namespace WinFormsApp1
 {
@@ -176,6 +181,29 @@ namespace WinFormsApp1
             Harta harta = new Harta();
             this.Hide();
             harta.ShowDialog();
+        }
+
+        private void ServiceMap_Click(object sender, EventArgs e)
+        {
+            ServicePanel.Show();
+        }
+
+        private void BackButtonService_Click(object sender, EventArgs e)
+        {
+            ServicePanel.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            map.DragButton = MouseButtons.Left;
+            map.MapProvider = GMapProviders.GoogleMap;
+            double lat = Convert.ToDouble(txtLat.Text);
+            double longt = Convert.ToDouble(txtLong.Text);
+            map.Position = new PointLatLng(lat, longt);
+            map.MinZoom = 5; //Minimum Zoom Level
+            map.MaxZoom = 100; //Maximum Zoom Level
+            map.Zoom = 10; //Current Zoom Level
+
         }
     }
 }

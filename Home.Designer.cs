@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SpecialistButton = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.ServiceMap = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.Info = new System.Windows.Forms.PictureBox();
@@ -211,11 +212,24 @@
             this.Tensiunea = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Greutea = new System.Windows.Forms.Label();
+            this.ServicePanel = new System.Windows.Forms.Panel();
+            this.panel41 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label101 = new System.Windows.Forms.Label();
+            this.label100 = new System.Windows.Forms.Label();
+            this.txtLong = new System.Windows.Forms.TextBox();
+            this.txtLat = new System.Windows.Forms.TextBox();
+            this.panel39 = new System.Windows.Forms.Panel();
+            this.panel40 = new System.Windows.Forms.Panel();
+            this.BackButtonService = new System.Windows.Forms.Label();
+            this.panel38 = new System.Windows.Forms.Panel();
+            this.map = new GMap.NET.WindowsForms.GMapControl();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPacientInterface)).BeginInit();
             this.MedicSpecialistPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SpecialistButton)).BeginInit();
+            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Info)).BeginInit();
             this.panel6.SuspendLayout();
@@ -269,6 +283,10 @@
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.ServicePanel.SuspendLayout();
+            this.panel41.SuspendLayout();
+            this.panel39.SuspendLayout();
+            this.panel38.SuspendLayout();
             this.SuspendLayout();
             // 
             // BineAtiVenit
@@ -379,10 +397,23 @@
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Controls.Add(this.ServiceMap);
             this.panel3.Location = new System.Drawing.Point(143, 433);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(298, 158);
             this.panel3.TabIndex = 14;
+            // 
+            // ServiceMap
+            // 
+            this.ServiceMap.BackColor = System.Drawing.Color.Transparent;
+            this.ServiceMap.Font = new System.Drawing.Font("Segoe UI Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ServiceMap.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ServiceMap.Location = new System.Drawing.Point(5, 115);
+            this.ServiceMap.Name = "ServiceMap";
+            this.ServiceMap.Size = new System.Drawing.Size(296, 40);
+            this.ServiceMap.TabIndex = 22;
+            this.ServiceMap.Text = "Harta Servicii Med";
+            this.ServiceMap.Click += new System.EventHandler(this.ServiceMap_Click);
             // 
             // panel4
             // 
@@ -451,9 +482,9 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label5.Location = new System.Drawing.Point(1, 118);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(314, 40);
+            this.label5.Size = new System.Drawing.Size(303, 40);
             this.label5.TabIndex = 21;
-            this.label5.Text = "Harta Cazuri Covrid";
+            this.label5.Text = "Harta Cazuri Judete";
             // 
             // MapButton
             // 
@@ -527,7 +558,7 @@
             this.Information.Controls.Add(this.panel9);
             this.Information.Controls.Add(this.panel8);
             this.Information.Controls.Add(this.panel2);
-            this.Information.Location = new System.Drawing.Point(12, 100);
+            this.Information.Location = new System.Drawing.Point(12, 91);
             this.Information.Name = "Information";
             this.Information.Size = new System.Drawing.Size(1373, 519);
             this.Information.TabIndex = 18;
@@ -2365,6 +2396,146 @@
             this.Greutea.Text = "Greutatea Corpului";
             this.Greutea.Click += new System.EventHandler(this.Greutea_Click);
             // 
+            // ServicePanel
+            // 
+            this.ServicePanel.BackColor = System.Drawing.Color.Transparent;
+            this.ServicePanel.Controls.Add(this.panel41);
+            this.ServicePanel.Controls.Add(this.panel39);
+            this.ServicePanel.Controls.Add(this.panel38);
+            this.ServicePanel.Location = new System.Drawing.Point(12, 93);
+            this.ServicePanel.Name = "ServicePanel";
+            this.ServicePanel.Size = new System.Drawing.Size(1373, 527);
+            this.ServicePanel.TabIndex = 19;
+            this.ServicePanel.Visible = false;
+            // 
+            // panel41
+            // 
+            this.panel41.Controls.Add(this.button1);
+            this.panel41.Controls.Add(this.label101);
+            this.panel41.Controls.Add(this.label100);
+            this.panel41.Controls.Add(this.txtLong);
+            this.panel41.Controls.Add(this.txtLat);
+            this.panel41.Location = new System.Drawing.Point(1118, 145);
+            this.panel41.Name = "panel41";
+            this.panel41.Size = new System.Drawing.Size(231, 355);
+            this.panel41.TabIndex = 29;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(71, 323);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "LoadMap";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.Location = new System.Drawing.Point(15, 290);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(64, 16);
+            this.label101.TabIndex = 3;
+            this.label101.Text = "Longitude";
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.Location = new System.Drawing.Point(13, 242);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(55, 16);
+            this.label100.TabIndex = 2;
+            this.label100.Text = "Latitude";
+            // 
+            // txtLong
+            // 
+            this.txtLong.Location = new System.Drawing.Point(94, 286);
+            this.txtLong.Name = "txtLong";
+            this.txtLong.Size = new System.Drawing.Size(119, 23);
+            this.txtLong.TabIndex = 1;
+            // 
+            // txtLat
+            // 
+            this.txtLat.Location = new System.Drawing.Point(94, 238);
+            this.txtLat.Name = "txtLat";
+            this.txtLat.Size = new System.Drawing.Size(119, 23);
+            this.txtLat.TabIndex = 0;
+            // 
+            // panel39
+            // 
+            this.panel39.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel39.BackColor = System.Drawing.Color.Transparent;
+            this.panel39.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel39.BackgroundImage")));
+            this.panel39.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel39.Controls.Add(this.panel40);
+            this.panel39.Controls.Add(this.BackButtonService);
+            this.panel39.Location = new System.Drawing.Point(16, 10);
+            this.panel39.Name = "panel39";
+            this.panel39.Size = new System.Drawing.Size(249, 59);
+            this.panel39.TabIndex = 28;
+            // 
+            // panel40
+            // 
+            this.panel40.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel40.BackColor = System.Drawing.Color.Transparent;
+            this.panel40.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel40.BackgroundImage")));
+            this.panel40.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel40.Location = new System.Drawing.Point(18, 4);
+            this.panel40.Name = "panel40";
+            this.panel40.Size = new System.Drawing.Size(90, 52);
+            this.panel40.TabIndex = 21;
+            // 
+            // BackButtonService
+            // 
+            this.BackButtonService.BackColor = System.Drawing.Color.Transparent;
+            this.BackButtonService.Font = new System.Drawing.Font("Segoe UI Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BackButtonService.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackButtonService.Location = new System.Drawing.Point(111, 9);
+            this.BackButtonService.Name = "BackButtonService";
+            this.BackButtonService.Size = new System.Drawing.Size(124, 40);
+            this.BackButtonService.TabIndex = 21;
+            this.BackButtonService.Text = "INAPOI";
+            this.BackButtonService.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BackButtonService.Click += new System.EventHandler(this.BackButtonService_Click);
+            // 
+            // panel38
+            // 
+            this.panel38.Controls.Add(this.map);
+            this.panel38.Location = new System.Drawing.Point(281, 26);
+            this.panel38.Name = "panel38";
+            this.panel38.Size = new System.Drawing.Size(826, 474);
+            this.panel38.TabIndex = 0;
+            // 
+            // map
+            // 
+            this.map.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.map.Bearing = 0F;
+            this.map.CanDragMap = true;
+            this.map.EmptyTileColor = System.Drawing.Color.Navy;
+            this.map.GrayScaleMode = false;
+            this.map.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.map.LevelsKeepInMemory = 5;
+            this.map.Location = new System.Drawing.Point(0, 0);
+            this.map.MarkersEnabled = true;
+            this.map.MaxZoom = 2;
+            this.map.MinZoom = 2;
+            this.map.MouseWheelZoomEnabled = true;
+            this.map.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.map.Name = "map";
+            this.map.NegativeMode = false;
+            this.map.PolygonsEnabled = true;
+            this.map.RetryLoadTile = 0;
+            this.map.RoutesEnabled = true;
+            this.map.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.map.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.map.ShowTileGridLines = false;
+            this.map.Size = new System.Drawing.Size(826, 474);
+            this.map.TabIndex = 0;
+            this.map.Zoom = 0D;
+            // 
             // Home
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -2372,6 +2543,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1397, 653);
+            this.Controls.Add(this.ServicePanel);
             this.Controls.Add(this.Information);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
@@ -2393,6 +2565,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.XPacientInterface)).EndInit();
             this.MedicSpecialistPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SpecialistButton)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Info)).EndInit();
             this.panel6.ResumeLayout(false);
@@ -2446,6 +2619,11 @@
             this.panel9.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.ServicePanel.ResumeLayout(false);
+            this.panel41.ResumeLayout(false);
+            this.panel41.PerformLayout();
+            this.panel39.ResumeLayout(false);
+            this.panel38.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2634,5 +2812,18 @@
         private Panel panel36;
         private Panel panel37;
         private Label BackButtonSA;
+        private Label ServiceMap;
+        private Panel ServicePanel;
+        private Panel panel38;
+        private Panel panel41;
+        private Button button1;
+        private Label label101;
+        private Label label100;
+        private TextBox txtLong;
+        private TextBox txtLat;
+        private Panel panel39;
+        private Panel panel40;
+        private Label BackButtonService;
+        private GMap.NET.WindowsForms.GMapControl map;
     }
 }
