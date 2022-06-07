@@ -214,7 +214,10 @@
             this.Greutea = new System.Windows.Forms.Label();
             this.ServicePanel = new System.Windows.Forms.Panel();
             this.panel41 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGetRoute = new System.Windows.Forms.Button();
+            this.btnClearList = new System.Windows.Forms.Button();
+            this.btnAddPoint = new System.Windows.Forms.Button();
+            this.mapLoad = new System.Windows.Forms.Button();
             this.label101 = new System.Windows.Forms.Label();
             this.label100 = new System.Windows.Forms.Label();
             this.txtLong = new System.Windows.Forms.TextBox();
@@ -224,6 +227,7 @@
             this.BackButtonService = new System.Windows.Forms.Label();
             this.panel38 = new System.Windows.Forms.Panel();
             this.map = new GMap.NET.WindowsForms.GMapControl();
+            this.lbDistance = new System.Windows.Forms.Label();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPacientInterface)).BeginInit();
@@ -2410,7 +2414,11 @@
             // 
             // panel41
             // 
-            this.panel41.Controls.Add(this.button1);
+            this.panel41.Controls.Add(this.lbDistance);
+            this.panel41.Controls.Add(this.btnGetRoute);
+            this.panel41.Controls.Add(this.btnClearList);
+            this.panel41.Controls.Add(this.btnAddPoint);
+            this.panel41.Controls.Add(this.mapLoad);
             this.panel41.Controls.Add(this.label101);
             this.panel41.Controls.Add(this.label100);
             this.panel41.Controls.Add(this.txtLong);
@@ -2420,20 +2428,50 @@
             this.panel41.Size = new System.Drawing.Size(231, 355);
             this.panel41.TabIndex = 29;
             // 
-            // button1
+            // btnGetRoute
             // 
-            this.button1.Location = new System.Drawing.Point(71, 323);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "LoadMap";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnGetRoute.Location = new System.Drawing.Point(81, 302);
+            this.btnGetRoute.Name = "btnGetRoute";
+            this.btnGetRoute.Size = new System.Drawing.Size(75, 23);
+            this.btnGetRoute.TabIndex = 7;
+            this.btnGetRoute.Text = "GetRoute";
+            this.btnGetRoute.UseVisualStyleBackColor = true;
+            this.btnGetRoute.Click += new System.EventHandler(this.btnGetRoute_Click);
+            // 
+            // btnClearList
+            // 
+            this.btnClearList.Location = new System.Drawing.Point(80, 328);
+            this.btnClearList.Name = "btnClearList";
+            this.btnClearList.Size = new System.Drawing.Size(75, 23);
+            this.btnClearList.TabIndex = 6;
+            this.btnClearList.Text = "ClearList";
+            this.btnClearList.UseVisualStyleBackColor = true;
+            this.btnClearList.Click += new System.EventHandler(this.btnClearList_Click);
+            // 
+            // btnAddPoint
+            // 
+            this.btnAddPoint.Location = new System.Drawing.Point(5, 328);
+            this.btnAddPoint.Name = "btnAddPoint";
+            this.btnAddPoint.Size = new System.Drawing.Size(75, 23);
+            this.btnAddPoint.TabIndex = 5;
+            this.btnAddPoint.Text = "AddPoint";
+            this.btnAddPoint.UseVisualStyleBackColor = true;
+            this.btnAddPoint.Click += new System.EventHandler(this.btnAddPoint_Click);
+            // 
+            // mapLoad
+            // 
+            this.mapLoad.Location = new System.Drawing.Point(154, 328);
+            this.mapLoad.Name = "mapLoad";
+            this.mapLoad.Size = new System.Drawing.Size(75, 23);
+            this.mapLoad.TabIndex = 4;
+            this.mapLoad.Text = "LoadMap";
+            this.mapLoad.UseVisualStyleBackColor = true;
+            this.mapLoad.Click += new System.EventHandler(this.button1_Click);
             // 
             // label101
             // 
             this.label101.AutoSize = true;
-            this.label101.Location = new System.Drawing.Point(15, 290);
+            this.label101.Location = new System.Drawing.Point(15, 275);
             this.label101.Name = "label101";
             this.label101.Size = new System.Drawing.Size(64, 16);
             this.label101.TabIndex = 3;
@@ -2442,7 +2480,7 @@
             // label100
             // 
             this.label100.AutoSize = true;
-            this.label100.Location = new System.Drawing.Point(13, 242);
+            this.label100.Location = new System.Drawing.Point(18, 242);
             this.label100.Name = "label100";
             this.label100.Size = new System.Drawing.Size(55, 16);
             this.label100.TabIndex = 2;
@@ -2450,7 +2488,7 @@
             // 
             // txtLong
             // 
-            this.txtLong.Location = new System.Drawing.Point(94, 286);
+            this.txtLong.Location = new System.Drawing.Point(94, 271);
             this.txtLong.Name = "txtLong";
             this.txtLong.Size = new System.Drawing.Size(119, 23);
             this.txtLong.TabIndex = 1;
@@ -2535,6 +2573,15 @@
             this.map.Size = new System.Drawing.Size(826, 474);
             this.map.TabIndex = 0;
             this.map.Zoom = 0D;
+            // 
+            // lbDistance
+            // 
+            this.lbDistance.AutoSize = true;
+            this.lbDistance.Location = new System.Drawing.Point(154, 5);
+            this.lbDistance.Name = "lbDistance";
+            this.lbDistance.Size = new System.Drawing.Size(66, 16);
+            this.lbDistance.TabIndex = 8;
+            this.lbDistance.Text = "[Distance]";
             // 
             // Home
             // 
@@ -2816,7 +2863,7 @@
         private Panel ServicePanel;
         private Panel panel38;
         private Panel panel41;
-        private Button button1;
+        private Button mapLoad;
         private Label label101;
         private Label label100;
         private TextBox txtLong;
@@ -2825,5 +2872,9 @@
         private Panel panel40;
         private Label BackButtonService;
         private GMap.NET.WindowsForms.GMapControl map;
+        private Button btnClearList;
+        private Button btnAddPoint;
+        private Button btnGetRoute;
+        private Label lbDistance;
     }
 }

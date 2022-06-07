@@ -17,11 +17,13 @@ using GMap.NET.WindowsForms.ToolTips;
 
 namespace WinFormsApp1
 {
-        public partial class Home : Form, IDisposable
+    public partial class Home : Form, IDisposable
     {
+        private List<PointLatLng> _points;
         public Home()
         {
             InitializeComponent();
+            _points = new List<PointLatLng>();
         }
 
         protected override CreateParams CreateParams
@@ -43,9 +45,11 @@ namespace WinFormsApp1
 
         private void Home_Load(object sender, EventArgs e)
         {
+            GMapProviders.GoogleMap.ApiKey = @"AIzaSyCYi6W-X0xmRapyFQk8LCyiaLAU3YVj1P8";
             timer1.Start();
             TimeLabel.Text = DateTime.Now.ToLongTimeString();
             DateLabel.Text = DateTime.Now.ToLongDateString();
+            map.ShowCenter = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -68,7 +72,7 @@ namespace WinFormsApp1
 
         private void Info_Click(object sender, EventArgs e)
         {
-           Information .Show();
+            Information.Show();
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -204,6 +208,45 @@ namespace WinFormsApp1
             map.MaxZoom = 100; //Maximum Zoom Level
             map.Zoom = 10; //Current Zoom Level
 
+            PointLatLng point = new PointLatLng(lat, longt);
+
+            //Bitmap bmpMarker = Image.FromFile("");
+            GMapMarker marker = new GMarkerGoogle(point, GMarkerGoogleType.red_pushpin);
+
+            // 1. Create an Overlay
+            GMapOverlay markers = new GMapOverlay("markers");
+
+            // 2. Add all available markers to that Overlay
+            markers.Markers.Add(marker);
+
+            // 3. Cover map with Overlay
+            map.Overlays.Add(markers);
+        }
+
+        private void btnAddPoint_Click(object sender, EventArgs e)
+        {
+            _points.Add(new PointLatLng(Convert.ToDouble(txtLat.Text),
+                Convert.ToDouble(txtLong.Text)));
+        }
+
+        private void btnClearList_Click(object sender, EventArgs e)
+        {
+            _points.Clear();
+        }
+
+        private void btnGetRoute_Click(object sender, EventArgs e)
+        {
+            var route = GoogleMapProvider.Instance
+                .GetRoute(_points[0], _points[1], false, false, 14); 
+            // beginning(0), destination(1), infoDisplay, walkOrDrive?, zoomLevel
+            var r = new GMapRoute(route.Points, "My Route") 
+            { Stroke = new Pen(Color.Red, 5) };
+
+            var routes = new GMapOverlay("routes");
+            routes.Routes.Add(r);
+            map.Overlays.Add(routes);
+
+            lbDistance.Text = route.Distance + " km";
         }
     }
 }
