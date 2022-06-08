@@ -214,6 +214,8 @@
             this.Greutea = new System.Windows.Forms.Label();
             this.ServicePanel = new System.Windows.Forms.Panel();
             this.panel41 = new System.Windows.Forms.Panel();
+            this.btnAddPoly = new System.Windows.Forms.Button();
+            this.lbDistance = new System.Windows.Forms.Label();
             this.btnGetRoute = new System.Windows.Forms.Button();
             this.btnClearList = new System.Windows.Forms.Button();
             this.btnAddPoint = new System.Windows.Forms.Button();
@@ -227,7 +229,7 @@
             this.BackButtonService = new System.Windows.Forms.Label();
             this.panel38 = new System.Windows.Forms.Panel();
             this.map = new GMap.NET.WindowsForms.GMapControl();
-            this.lbDistance = new System.Windows.Forms.Label();
+            this.btnRemoveOverlay = new System.Windows.Forms.Button();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPacientInterface)).BeginInit();
@@ -2414,6 +2416,8 @@
             // 
             // panel41
             // 
+            this.panel41.Controls.Add(this.btnRemoveOverlay);
+            this.panel41.Controls.Add(this.btnAddPoly);
             this.panel41.Controls.Add(this.lbDistance);
             this.panel41.Controls.Add(this.btnGetRoute);
             this.panel41.Controls.Add(this.btnClearList);
@@ -2428,9 +2432,28 @@
             this.panel41.Size = new System.Drawing.Size(231, 355);
             this.panel41.TabIndex = 29;
             // 
+            // btnAddPoly
+            // 
+            this.btnAddPoly.Location = new System.Drawing.Point(154, 279);
+            this.btnAddPoly.Name = "btnAddPoly";
+            this.btnAddPoly.Size = new System.Drawing.Size(75, 23);
+            this.btnAddPoly.TabIndex = 9;
+            this.btnAddPoly.Text = "Delimit";
+            this.btnAddPoly.UseVisualStyleBackColor = true;
+            this.btnAddPoly.Click += new System.EventHandler(this.btnAddPoly_Click);
+            // 
+            // lbDistance
+            // 
+            this.lbDistance.AutoSize = true;
+            this.lbDistance.Location = new System.Drawing.Point(154, 5);
+            this.lbDistance.Name = "lbDistance";
+            this.lbDistance.Size = new System.Drawing.Size(66, 16);
+            this.lbDistance.TabIndex = 8;
+            this.lbDistance.Text = "[Distance]";
+            // 
             // btnGetRoute
             // 
-            this.btnGetRoute.Location = new System.Drawing.Point(81, 302);
+            this.btnGetRoute.Location = new System.Drawing.Point(80, 279);
             this.btnGetRoute.Name = "btnGetRoute";
             this.btnGetRoute.Size = new System.Drawing.Size(75, 23);
             this.btnGetRoute.TabIndex = 7;
@@ -2440,7 +2463,7 @@
             // 
             // btnClearList
             // 
-            this.btnClearList.Location = new System.Drawing.Point(80, 328);
+            this.btnClearList.Location = new System.Drawing.Point(80, 305);
             this.btnClearList.Name = "btnClearList";
             this.btnClearList.Size = new System.Drawing.Size(75, 23);
             this.btnClearList.TabIndex = 6;
@@ -2450,7 +2473,7 @@
             // 
             // btnAddPoint
             // 
-            this.btnAddPoint.Location = new System.Drawing.Point(5, 328);
+            this.btnAddPoint.Location = new System.Drawing.Point(5, 305);
             this.btnAddPoint.Name = "btnAddPoint";
             this.btnAddPoint.Size = new System.Drawing.Size(75, 23);
             this.btnAddPoint.TabIndex = 5;
@@ -2460,7 +2483,7 @@
             // 
             // mapLoad
             // 
-            this.mapLoad.Location = new System.Drawing.Point(154, 328);
+            this.mapLoad.Location = new System.Drawing.Point(154, 305);
             this.mapLoad.Name = "mapLoad";
             this.mapLoad.Size = new System.Drawing.Size(75, 23);
             this.mapLoad.TabIndex = 4;
@@ -2471,7 +2494,7 @@
             // label101
             // 
             this.label101.AutoSize = true;
-            this.label101.Location = new System.Drawing.Point(15, 275);
+            this.label101.Location = new System.Drawing.Point(15, 254);
             this.label101.Name = "label101";
             this.label101.Size = new System.Drawing.Size(64, 16);
             this.label101.TabIndex = 3;
@@ -2480,7 +2503,7 @@
             // label100
             // 
             this.label100.AutoSize = true;
-            this.label100.Location = new System.Drawing.Point(18, 242);
+            this.label100.Location = new System.Drawing.Point(18, 221);
             this.label100.Name = "label100";
             this.label100.Size = new System.Drawing.Size(55, 16);
             this.label100.TabIndex = 2;
@@ -2488,14 +2511,14 @@
             // 
             // txtLong
             // 
-            this.txtLong.Location = new System.Drawing.Point(94, 271);
+            this.txtLong.Location = new System.Drawing.Point(94, 250);
             this.txtLong.Name = "txtLong";
             this.txtLong.Size = new System.Drawing.Size(119, 23);
             this.txtLong.TabIndex = 1;
             // 
             // txtLat
             // 
-            this.txtLat.Location = new System.Drawing.Point(94, 238);
+            this.txtLat.Location = new System.Drawing.Point(94, 217);
             this.txtLat.Name = "txtLat";
             this.txtLat.Size = new System.Drawing.Size(119, 23);
             this.txtLat.TabIndex = 0;
@@ -2574,14 +2597,15 @@
             this.map.TabIndex = 0;
             this.map.Zoom = 0D;
             // 
-            // lbDistance
+            // btnRemoveOverlay
             // 
-            this.lbDistance.AutoSize = true;
-            this.lbDistance.Location = new System.Drawing.Point(154, 5);
-            this.lbDistance.Name = "lbDistance";
-            this.lbDistance.Size = new System.Drawing.Size(66, 16);
-            this.lbDistance.TabIndex = 8;
-            this.lbDistance.Text = "[Distance]";
+            this.btnRemoveOverlay.Location = new System.Drawing.Point(59, 328);
+            this.btnRemoveOverlay.Name = "btnRemoveOverlay";
+            this.btnRemoveOverlay.Size = new System.Drawing.Size(115, 23);
+            this.btnRemoveOverlay.TabIndex = 10;
+            this.btnRemoveOverlay.Text = "Remove Overlay";
+            this.btnRemoveOverlay.UseVisualStyleBackColor = true;
+            this.btnRemoveOverlay.Click += new System.EventHandler(this.btnRemoveOverlay_Click);
             // 
             // Home
             // 
@@ -2876,5 +2900,7 @@
         private Button btnAddPoint;
         private Button btnGetRoute;
         private Label lbDistance;
+        private Button btnAddPoly;
+        private Button btnRemoveOverlay;
     }
 }

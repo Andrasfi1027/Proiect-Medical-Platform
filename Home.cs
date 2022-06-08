@@ -42,14 +42,21 @@ namespace WinFormsApp1
             Login login = new Login();
             login.Show();
         }
-
+        // 1. Create an Overlay
+        GMapOverlay markers = new GMapOverlay("markers");
         private void Home_Load(object sender, EventArgs e)
         {
             GMapProviders.GoogleMap.ApiKey = @"AIzaSyCYi6W-X0xmRapyFQk8LCyiaLAU3YVj1P8";
             timer1.Start();
             TimeLabel.Text = DateTime.Now.ToLongTimeString();
             DateLabel.Text = DateTime.Now.ToLongDateString();
+            map.DragButton = MouseButtons.Left;
+            map.MapProvider = GMapProviders.GoogleMap;
             map.ShowCenter = false;
+            map.MinZoom = 5; //Minimum Zoom Level
+            map.MaxZoom = 100; //Maximum Zoom Level
+            map.Zoom = 10; //Current Zoom Level
+            map.SetPositionByKeywords("Satu Mare,  Romania");
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -197,24 +204,25 @@ namespace WinFormsApp1
             ServicePanel.Hide();
         }
 
+        // 1. Create an Overlay
+        //GMapOverlay markers = new GMapOverlay("markers");
         private void button1_Click(object sender, EventArgs e)
         {
-            map.DragButton = MouseButtons.Left;
-            map.MapProvider = GMapProviders.GoogleMap;
+            //map.DragButton = MouseButtons.Left;
+            // map.MapProvider = GMapProviders.GoogleMap;
+            // map.SetPositionByKeywords("Arad,  România");
+            map.Position = new PointLatLng(Convert.ToDouble(txtLat.Text), Convert.ToDouble(txtLong));
             double lat = Convert.ToDouble(txtLat.Text);
             double longt = Convert.ToDouble(txtLong.Text);
-            map.Position = new PointLatLng(lat, longt);
-            map.MinZoom = 5; //Minimum Zoom Level
-            map.MaxZoom = 100; //Maximum Zoom Level
-            map.Zoom = 10; //Current Zoom Level
+            //map.Position = new PointLatLng(lat, longt);
+            // map.MinZoom = 5; //Minimum Zoom Level
+            //map.MaxZoom = 100; //Maximum Zoom Level
+            //map.Zoom = 10; //Current Zoom Level
 
             PointLatLng point = new PointLatLng(lat, longt);
 
             //Bitmap bmpMarker = Image.FromFile("");
             GMapMarker marker = new GMarkerGoogle(point, GMarkerGoogleType.red_pushpin);
-
-            // 1. Create an Overlay
-            GMapOverlay markers = new GMapOverlay("markers");
 
             // 2. Add all available markers to that Overlay
             markers.Markers.Add(marker);
@@ -237,9 +245,9 @@ namespace WinFormsApp1
         private void btnGetRoute_Click(object sender, EventArgs e)
         {
             var route = GoogleMapProvider.Instance
-                .GetRoute(_points[0], _points[1], false, false, 14); 
+                .GetRoute(_points[0], _points[1], false, false, 14);
             // beginning(0), destination(1), infoDisplay, walkOrDrive?, zoomLevel
-            var r = new GMapRoute(route.Points, "My Route") 
+            var r = new GMapRoute(route.Points, "My Route")
             { Stroke = new Pen(Color.Red, 5) };
 
             var routes = new GMapOverlay("routes");
@@ -247,6 +255,27 @@ namespace WinFormsApp1
             map.Overlays.Add(routes);
 
             lbDistance.Text = route.Distance + " km";
+        }
+
+        private void btnAddPoly_Click(object sender, EventArgs e)
+        {
+            var polygon = new GMapPolygon(_points, "My Area")
+            {
+                Stroke = new Pen(Color.Blue, 2),
+                Fill = new SolidBrush(Color.BurlyWood)
+            };
+            var polygons = new GMapOverlay("polygons");
+            polygons.Polygons.Add(polygon);
+            map.Overlays.Add(polygons);
+        }
+
+        private void btnRemoveOverlay_Click(object sender, EventArgs e)
+        {
+            if (map.Overlays.Count > 0)
+            {
+                map.Overlays.RemoveAt(0);
+                map.Refresh();
+            }
         }
     }
 }
