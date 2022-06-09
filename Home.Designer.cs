@@ -214,6 +214,8 @@
             this.Greutea = new System.Windows.Forms.Label();
             this.ServicePanel = new System.Windows.Forms.Panel();
             this.panel41 = new System.Windows.Forms.Panel();
+            this.txtAddress = new System.Windows.Forms.RichTextBox();
+            this.btnRemoveOverlay = new System.Windows.Forms.Button();
             this.btnAddPoly = new System.Windows.Forms.Button();
             this.lbDistance = new System.Windows.Forms.Label();
             this.btnGetRoute = new System.Windows.Forms.Button();
@@ -229,7 +231,7 @@
             this.BackButtonService = new System.Windows.Forms.Label();
             this.panel38 = new System.Windows.Forms.Panel();
             this.map = new GMap.NET.WindowsForms.GMapControl();
-            this.btnRemoveOverlay = new System.Windows.Forms.Button();
+            this.chkMouseClick = new System.Windows.Forms.CheckBox();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPacientInterface)).BeginInit();
@@ -2416,6 +2418,8 @@
             // 
             // panel41
             // 
+            this.panel41.Controls.Add(this.chkMouseClick);
+            this.panel41.Controls.Add(this.txtAddress);
             this.panel41.Controls.Add(this.btnRemoveOverlay);
             this.panel41.Controls.Add(this.btnAddPoly);
             this.panel41.Controls.Add(this.lbDistance);
@@ -2431,6 +2435,24 @@
             this.panel41.Name = "panel41";
             this.panel41.Size = new System.Drawing.Size(231, 355);
             this.panel41.TabIndex = 29;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(19, 27);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(194, 162);
+            this.txtAddress.TabIndex = 11;
+            this.txtAddress.Text = "";
+            // 
+            // btnRemoveOverlay
+            // 
+            this.btnRemoveOverlay.Location = new System.Drawing.Point(59, 328);
+            this.btnRemoveOverlay.Name = "btnRemoveOverlay";
+            this.btnRemoveOverlay.Size = new System.Drawing.Size(115, 23);
+            this.btnRemoveOverlay.TabIndex = 10;
+            this.btnRemoveOverlay.Text = "Remove Overlay";
+            this.btnRemoveOverlay.UseVisualStyleBackColor = true;
+            this.btnRemoveOverlay.Click += new System.EventHandler(this.btnRemoveOverlay_Click);
             // 
             // btnAddPoly
             // 
@@ -2596,16 +2618,17 @@
             this.map.Size = new System.Drawing.Size(826, 474);
             this.map.TabIndex = 0;
             this.map.Zoom = 0D;
+            this.map.MouseClick += new System.Windows.Forms.MouseEventHandler(this.map_MouseClick);
             // 
-            // btnRemoveOverlay
+            // chkMouseClick
             // 
-            this.btnRemoveOverlay.Location = new System.Drawing.Point(59, 328);
-            this.btnRemoveOverlay.Name = "btnRemoveOverlay";
-            this.btnRemoveOverlay.Size = new System.Drawing.Size(115, 23);
-            this.btnRemoveOverlay.TabIndex = 10;
-            this.btnRemoveOverlay.Text = "Remove Overlay";
-            this.btnRemoveOverlay.UseVisualStyleBackColor = true;
-            this.btnRemoveOverlay.Click += new System.EventHandler(this.btnRemoveOverlay_Click);
+            this.chkMouseClick.AutoSize = true;
+            this.chkMouseClick.Location = new System.Drawing.Point(19, 194);
+            this.chkMouseClick.Name = "chkMouseClick";
+            this.chkMouseClick.Size = new System.Drawing.Size(134, 20);
+            this.chkMouseClick.TabIndex = 12;
+            this.chkMouseClick.Text = "Enable Mouse Click";
+            this.chkMouseClick.UseVisualStyleBackColor = true;
             // 
             // Home
             // 
@@ -2902,5 +2925,7 @@
         private Label lbDistance;
         private Button btnAddPoly;
         private Button btnRemoveOverlay;
+        private RichTextBox txtAddress;
+        private CheckBox chkMouseClick;
     }
 }
