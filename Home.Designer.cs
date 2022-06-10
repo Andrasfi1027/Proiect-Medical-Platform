@@ -214,6 +214,9 @@
             this.Greutea = new System.Windows.Forms.Label();
             this.ServicePanel = new System.Windows.Forms.Panel();
             this.panel41 = new System.Windows.Forms.Panel();
+            this.label98 = new System.Windows.Forms.Label();
+            this.btnSearchInsidePoly = new System.Windows.Forms.Button();
+            this.chkMouseClick = new System.Windows.Forms.CheckBox();
             this.txtAddress = new System.Windows.Forms.RichTextBox();
             this.btnRemoveOverlay = new System.Windows.Forms.Button();
             this.btnAddPoly = new System.Windows.Forms.Button();
@@ -231,7 +234,6 @@
             this.BackButtonService = new System.Windows.Forms.Label();
             this.panel38 = new System.Windows.Forms.Panel();
             this.map = new GMap.NET.WindowsForms.GMapControl();
-            this.chkMouseClick = new System.Windows.Forms.CheckBox();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPacientInterface)).BeginInit();
@@ -2418,6 +2420,8 @@
             // 
             // panel41
             // 
+            this.panel41.Controls.Add(this.label98);
+            this.panel41.Controls.Add(this.btnSearchInsidePoly);
             this.panel41.Controls.Add(this.chkMouseClick);
             this.panel41.Controls.Add(this.txtAddress);
             this.panel41.Controls.Add(this.btnRemoveOverlay);
@@ -2435,6 +2439,35 @@
             this.panel41.Name = "panel41";
             this.panel41.Size = new System.Drawing.Size(231, 355);
             this.panel41.TabIndex = 29;
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Location = new System.Drawing.Point(9, 6);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(104, 16);
+            this.label98.TabIndex = 14;
+            this.label98.Text = "For Development";
+            // 
+            // btnSearchInsidePoly
+            // 
+            this.btnSearchInsidePoly.Location = new System.Drawing.Point(5, 280);
+            this.btnSearchInsidePoly.Name = "btnSearchInsidePoly";
+            this.btnSearchInsidePoly.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchInsidePoly.TabIndex = 13;
+            this.btnSearchInsidePoly.Text = "Search";
+            this.btnSearchInsidePoly.UseVisualStyleBackColor = true;
+            this.btnSearchInsidePoly.Click += new System.EventHandler(this.btnSearchInsidePoly_Click);
+            // 
+            // chkMouseClick
+            // 
+            this.chkMouseClick.AutoSize = true;
+            this.chkMouseClick.Location = new System.Drawing.Point(19, 194);
+            this.chkMouseClick.Name = "chkMouseClick";
+            this.chkMouseClick.Size = new System.Drawing.Size(134, 20);
+            this.chkMouseClick.TabIndex = 12;
+            this.chkMouseClick.Text = "Enable Mouse Click";
+            this.chkMouseClick.UseVisualStyleBackColor = true;
             // 
             // txtAddress
             // 
@@ -2456,7 +2489,7 @@
             // 
             // btnAddPoly
             // 
-            this.btnAddPoly.Location = new System.Drawing.Point(154, 279);
+            this.btnAddPoly.Location = new System.Drawing.Point(154, 280);
             this.btnAddPoly.Name = "btnAddPoly";
             this.btnAddPoly.Size = new System.Drawing.Size(75, 23);
             this.btnAddPoly.TabIndex = 9;
@@ -2475,7 +2508,7 @@
             // 
             // btnGetRoute
             // 
-            this.btnGetRoute.Location = new System.Drawing.Point(80, 279);
+            this.btnGetRoute.Location = new System.Drawing.Point(79, 280);
             this.btnGetRoute.Name = "btnGetRoute";
             this.btnGetRoute.Size = new System.Drawing.Size(75, 23);
             this.btnGetRoute.TabIndex = 7;
@@ -2485,7 +2518,7 @@
             // 
             // btnClearList
             // 
-            this.btnClearList.Location = new System.Drawing.Point(80, 305);
+            this.btnClearList.Location = new System.Drawing.Point(79, 305);
             this.btnClearList.Name = "btnClearList";
             this.btnClearList.Size = new System.Drawing.Size(75, 23);
             this.btnClearList.TabIndex = 6;
@@ -2619,16 +2652,6 @@
             this.map.TabIndex = 0;
             this.map.Zoom = 0D;
             this.map.MouseClick += new System.Windows.Forms.MouseEventHandler(this.map_MouseClick);
-            // 
-            // chkMouseClick
-            // 
-            this.chkMouseClick.AutoSize = true;
-            this.chkMouseClick.Location = new System.Drawing.Point(19, 194);
-            this.chkMouseClick.Name = "chkMouseClick";
-            this.chkMouseClick.Size = new System.Drawing.Size(134, 20);
-            this.chkMouseClick.TabIndex = 12;
-            this.chkMouseClick.Text = "Enable Mouse Click";
-            this.chkMouseClick.UseVisualStyleBackColor = true;
             // 
             // Home
             // 
@@ -2927,5 +2950,7 @@
         private Button btnRemoveOverlay;
         private RichTextBox txtAddress;
         private CheckBox chkMouseClick;
+        private Button btnSearchInsidePoly;
+        private Label label98;
     }
 }

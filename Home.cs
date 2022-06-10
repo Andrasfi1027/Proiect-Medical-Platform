@@ -14,9 +14,11 @@ using GMap.NET;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms.ToolTips;
+using WinFormsApp1.Extension;
 
 namespace WinFormsApp1
 {
+
     public partial class Home : Form, IDisposable
     {
         private List<PointLatLng> _points;
@@ -49,17 +51,17 @@ namespace WinFormsApp1
             timer1.Start();
             TimeLabel.Text = DateTime.Now.ToLongTimeString();
             DateLabel.Text = DateTime.Now.ToLongDateString();
-            GMapProviders.GoogleMap.ApiKey = @"AIzaSyCYi6W-X0xmRapyFQk8LCyiaLAU3YVj1P8";
+            GMapProviders.GoogleMap.ApiKey = AppConfig.Key;
             GMaps.Instance.Mode = AccessMode.ServerAndCache;
             map.CacheLocation = @"cache";
             map.DragButton = MouseButtons.Left;
             map.MapProvider = GMapProviders.GoogleMap;
             map.ShowCenter = false;
             map.MapProvider = GoogleMapProvider.Instance;
-            map.SetPositionByKeywords("Satu Mare,  Romania");
             map.MinZoom = 5; // Minimum Zoom Level
             map.MaxZoom = 100; // Maximum Zoom Level
             map.Zoom = 10; // Current Zoom Level
+            map.SetPositionByKeywords("Satu Mare,  Romania");
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -211,26 +213,67 @@ namespace WinFormsApp1
         //GMapOverlay markers = new GMapOverlay("markers");
         private void button1_Click(object sender, EventArgs e)
         {
-            var point = new PointLatLng(Convert.ToDouble(txtLat.Text), Convert.ToDouble(txtLong.Text));
-            LoadMap(point);
-            AddMarker(point);
-            //map.DragButton = MouseButtons.Left;
-            // map.MapProvider = GMapProviders.GoogleMap;
-            // map.SetPositionByKeywords("Arad,  România");
-            //map.Position = new PointLatLng(Convert.ToDouble(txtLat.Text), Convert.ToDouble(txtLong));
-            //double lat = Convert.ToDouble(txtLat.Text);
-            // double longt = Convert.ToDouble(txtLong.Text);
-            //map.Position = new PointLatLng(lat, longt);
-            // map.MinZoom = 5; //Minimum Zoom Level
-            //map.MaxZoom = 100; //Maximum Zoom Level
-            //map.Zoom = 10; //Current Zoom Level
-            //PointLatLng point = new PointLatLng(lat, longt);
-            //Bitmap bmpMarker = Image.FromFile("");
-            //GMapMarker marker = new GMarkerGoogle(point, GMarkerGoogleType.red_pushpin);
-            // 2. Add all available markers to that Overlay
-            //markers.Markers.Add(marker);
-            // 3. Cover map with Overlay
-            //map.Overlays.Add(markers);
+            //Reverse Geocoding
+            if (!(txtLat.Text.Trim().Equals("") && txtLong.Text.Trim().Equals("")))
+            {
+                var point = new PointLatLng(Convert.ToDouble(txtLat.Text), Convert.ToDouble(txtLong.Text));
+                LoadAndMark(point);
+                //LoadMap(point);
+                // AddMarker(point);
+                GeoCoderStatusCode statusCode;
+                var placemark = GoogleMapProvider.Instance.GetPlacemark(point, out statusCode);
+                if (statusCode == GeoCoderStatusCode.OK)
+                {
+                    txtAddress.Text = placemark?.Address;
+                }
+                else
+                {
+                    txtAddress.Text = "Something Went Wrong. Returned Status: " + statusCode;
+                }
+            }
+            else
+            {
+                //Geocoding
+                if (txtAddress.Text.Trim().Equals(""))
+                {
+                    GeoCoderStatusCode statusCode;
+                    var pointLatLng = GoogleMapProvider.Instance.GetPoint(txtAddress.Text.Trim(), out statusCode);
+                    if (statusCode == GeoCoderStatusCode.OK)
+                    {
+                        var pt = pointLatLng ?? default(PointLatLng);
+                        txtLat.Text = pointLatLng?.Lat.ToString();
+                        txtLong.Text = pointLatLng?.Lng.ToString();
+                        LoadAndMark(pt);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Returned Status Code: " + statusCode);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Data To Load");
+                }
+            }
+            /*
+            map.DragButton = MouseButtons.Left;
+            map.MapProvider = GMapProviders.GoogleMap;
+            map.SetPositionByKeywords("Arad,  România");
+            map.Position = new PointLatLng(Convert.ToDouble(txtLat.Text), Convert.ToDouble(txtLong));
+            double lat = Convert.ToDouble(txtLat.Text);
+            double longt = Convert.ToDouble(txtLong.Text);
+            map.Position = new PointLatLng(lat, longt);
+            map.MinZoom = 5; //Minimum Zoom Level
+            map.MaxZoom = 100; //Maximum Zoom Level
+            map.Zoom = 10; //Current Zoom Level
+            PointLatLng point = new PointLatLng(lat, longt);
+            Bitmap bmpMarker = Image.FromFile("");
+            GMapMarker marker = new GMarkerGoogle(point, GMarkerGoogleType.red_pushpin);
+            2. Add all available markers to that Overlay
+            markers.Markers.Add(marker);
+            3. Cover map with Overlay
+            */
+            map.Overlays.Add(markers);
         }
 
         private void btnAddPoint_Click(object sender, EventArgs e)
@@ -255,8 +298,9 @@ namespace WinFormsApp1
             var routes = new GMapOverlay("routes");
             routes.Routes.Add(r);
             map.Overlays.Add(routes);
-
-            lbDistance.Text = route.Distance + " km";
+            map.RefreshMap();
+            lbDistance.Text = route.Distance + @" km";
+            //RefreshMap();
         }
 
         private void btnAddPoly_Click(object sender, EventArgs e)
@@ -269,6 +313,8 @@ namespace WinFormsApp1
             var polygons = new GMapOverlay("polygons");
             polygons.Polygons.Add(polygon);
             map.Overlays.Add(polygons);
+            map.RefreshMap();
+            //RefreshMap();
         }
 
         private void btnRemoveOverlay_Click(object sender, EventArgs e)
@@ -295,11 +341,12 @@ namespace WinFormsApp1
                 //map.Position = point;
                 LoadMap(point);
 
-                //Adding Marker
-                //var markers = new GMapOverlay("markers");
-                //var marker = new GMarkerGoogle(pointToAdd, markerType);
-                // markers.Markers.Add(marker);
-                //map.Overlays.Add(markers);
+                /*Adding Marker
+                var markers = new GMapOverlay("markers");
+                var marker = new GMarkerGoogle(pointToAdd, markerType);
+                markers.Markers.Add(marker);
+                */
+                map.Overlays.Add(markers);
                 AddMarker(point);
 
                 // Get Address
@@ -321,7 +368,21 @@ namespace WinFormsApp1
         private void AddMarker(PointLatLng pointToAdd, GMarkerGoogleType markerType = GMarkerGoogleType.arrow)
         {
             var markers = new GMapOverlay("markers");
-            var marker = new GMarkerGoogle(pointToAdd, markerType);
+            var marker = new GMarkerGoogle(pointToAdd, markerType)
+            {
+                ToolTipText = $"Latitude: {Math.Round(map.Position.Lat)}, \n Longitude: {Math.Round(map.Position.Lng)}" //string interpolation
+            };
+
+            var toolTip = new GMapToolTip(marker)
+            {
+                Fill = new SolidBrush(Color.DarkBlue),
+                Foreground = new SolidBrush(Color.White),
+                Offset = new Point(50, -50),
+                Stroke = new Pen(new SolidBrush(Color.Red))
+            };
+
+            marker.ToolTip = toolTip;
+
             markers.Markers.Add(marker);
             map.Overlays.Add(markers);
         }
@@ -340,6 +401,76 @@ namespace WinFormsApp1
                 return addresses;
             }
             return null;
+        }
+
+        private void LoadAndMark(PointLatLng point)
+        {
+            LoadMap(point);
+            AddMarker(point);
+        }
+
+        private void btnSearchInsidePoly_Click(object sender, EventArgs e)
+        {
+            var pointToSearch = new PointLatLng(Convert.ToDouble(txtLat.Text), Convert.ToDouble(txtLong.Text));
+            //var pointToSearch = new PointLatLng(*specific coordinate(devinput)*);
+            if(!SearchInsidePolygons(pointToSearch)) //== false
+            {
+                if(!SearchInPolygons(pointToSearch)) // == false
+                {
+                    MessageBox.Show("Location Not Found!");
+                    return;
+                }
+            }
+            MessageBox.Show("Location Found!");
+        }
+        /* private void RefreshMap()
+         {
+             map.Zoom--;
+             map.Zoom++;
+         }*/
+
+        private bool SearchInPolygons(PointLatLng pointToSearch)
+        {
+            var overlays = map.Overlays;
+            foreach (var overlay in overlays)
+            {
+                var polygons = overlay.Polygons;
+                foreach(var polygon in polygons)
+                {
+                    foreach(var point in polygon.Points)
+                    {
+                        if(point == pointToSearch)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+    }
+
+        private bool SearchInsidePolygons(PointLatLng pointToSearch)
+        {
+            var overlays = map.Overlays;
+            foreach (var overlay in overlays)
+            {
+                var polygons = overlay.Polygons;
+
+                foreach (var polygon in polygons)
+                {
+                    if (polygon.IsInside(pointToSearch))
+                    {
+                        polygon.Fill = new SolidBrush(Color.FromArgb(120, 10, 200, 100));
+                        LoadMap(pointToSearch);
+                        AddMarker(pointToSearch, GMarkerGoogleType.lightblue);
+                        map.RefreshMap();
+                        var ps = polygon.Points;
+                        var ps1 = polygon.LocalPoints;
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
     }
 }
